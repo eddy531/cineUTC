@@ -1,7 +1,7 @@
 databases:
   - name: servidorEddy
     plan: free
-    databaseName: dbcine
+    databaseName: dbbCineUTC
     user: eddy
 
 services:
