@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-x&=t0r89)br!tt4@yyr!72*ndwn6u&uy%8rdfm0z92a*t+wdmt
 DEBUG = True
 
 #ALLOWED_HOSTS = []
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'cineutc-24i1.onrender.com').split(',')
 
 # Application definition
 
