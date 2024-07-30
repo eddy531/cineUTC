@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAISES</title>
+</head>
+<body>
+    {% extends "./plantilla.html" %}
+    {% block body %}
+    
+    <h1 class="text-center">Nuevo Pais</h1>
+    <div class="text-end">
+        <a href="{% url 'nuevoPais' %}" class="btn btn-success">Agregar Pais</a>
+    </div>
+    <br>
+    <table class="table table-bordered table-striped table-hover" id="tbl-paises">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NOMBRE</th>
+                <th>CONTINENTE</th>
+                <th>CAPITAL</th>
+                <th>ACCIONES</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for paisesTemporal in paises%}
+            <tr>
+                <td>{{paisesTemporal.id}}</td>
+                <td>{{paisesTemporal.nombre}}</td>
+                <td>{{paisesTemporal.continente}}</td>
+                <td>{{paisesTemporal.capital}}</td>
+                <td>
+                    <a href="{% url 'editarPais' paisesTemporal.id %}" class="btn btn-warning">Editar</a>
+                    <a href="{% url 'eliminarPais' paisesTemporal.id %}" 
+                    onclick="return confirm('Esta seguro?');"
+                    class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+
+            {% endfor %}
+        </tbody>
+        <script>
+            let table = new DataTable('#tbl-paises');
+        </script>
+    </table>
+    {% endblock %}
+</body>
+</html>

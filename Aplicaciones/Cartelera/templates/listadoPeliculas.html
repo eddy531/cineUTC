@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends "./plantilla.html" %}
+    {% block body %}
+    
+    <div class="card">
+        <div class="card-title text-center">
+            <br>
+            <h3><b>LISTADO DE PELICULAS</b></h3>
+        </div>
+    </div>
+    <br>
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>TITULO</th>
+                <th>DURACION</th>
+                <th>SINOPSIS</th>
+                <th>GENERO</th>
+                <th>DIRECTOR</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for peliculasTemporal in peliculas%}
+            <tr>
+                <td>{{peliculasTemporal.id}}</td>
+                <td>{{peliculasTemporal.titulo}}</td>
+                <td>{{peliculasTemporal.duracion}}</td>
+                <td>{{peliculasTemporal.sinopsis}}</td>
+                <td>{{peliculasTemporal.genero}}</td>
+                <td>{{peliculasTemporal.director}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+    {% endblock %}
+</body>
+</html>
