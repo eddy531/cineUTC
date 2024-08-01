@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PAISES</title>
 </head>
+
 <body>
     {% extends "./plantilla.html" %}
     {% block body %}
-    
+
     <h1 class="text-center">Nuevo Pais</h1>
     <div class="text-end">
         <a href="{% url 'nuevoPais' %}" class="btn btn-success">Agregar Pais</a>
@@ -33,9 +35,8 @@
                 <td>{{paisesTemporal.capital}}</td>
                 <td>
                     <a href="{% url 'editarPais' paisesTemporal.id %}" class="btn btn-warning">Editar</a>
-                    <a href="{% url 'eliminarPais' paisesTemporal.id %}" 
-                    onclick="return confirm('Esta seguro?');"
-                    class="btn btn-danger">Eliminar</a>
+                    <a href="{% url 'eliminarPais' paisesTemporal.id %}" onclick="return confirm('Esta seguro?');"
+                        class="btn btn-danger">Eliminar</a>
                 </td>
             </tr>
 
@@ -47,4 +48,5 @@
     </table>
     {% endblock %}
 </body>
+
 </html>
